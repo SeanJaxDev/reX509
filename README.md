@@ -1,5 +1,3 @@
-# reX509
-
 ![reX509 logo](img/reX509_logo.png)
 
 reX509 is a streamlined helper for certificate lifecycle work, built to make certificate signing requests less tedious and far more repeatable. Instead of juggling raw fields, copy-paste mistakes, and renewal friction, it gives you a cleaner path from existing certificate details to a fresh CSR.
