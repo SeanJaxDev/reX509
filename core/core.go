@@ -53,7 +53,7 @@ type SignatureAlgorithm x509.SignatureAlgorithm
 
 // CsrTemplate represents a template for creating a Certificate Signing Request (CSR).
 type CsrTemplate struct {
-	SignatureAlgorithm x509.SignatureAlgorithm
+	SignatureAlgorithm SignatureAlgorithm
 	Subject            pkix.Name
 	DNSNames           []string
 	EmailAddresses     []string
