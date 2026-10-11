@@ -21,6 +21,27 @@ var (
 	MLDSA87          = SignatureAlgorithm(x509.MLDSA87)
 )
 
+var DefaultSignatureAlgorithm = ECDSAWithSHA256
+
+var ContemporarySignatureAlgorithms = map[SignatureAlgorithm]bool{
+	ECDSAWithSHA256:  true,
+	ECDSAWithSHA384:  true,
+	ECDSAWithSHA512:  true,
+	PureEd25519:      true,
+	SHA256WithRSAPSS: true,
+	SHA384WithRSAPSS: true,
+	SHA512WithRSAPSS: true,
+	MLDSA44:          true,
+	MLDSA65:          true,
+	MLDSA87:          true,
+}
+
+var LegacySignatureAlgorithms = map[SignatureAlgorithm]bool{
+	SHA256WithRSA: true,
+	SHA384WithRSA: true,
+	SHA512WithRSA: true,
+}
+
 type SignatureAlgorithm x509.SignatureAlgorithm
 
 type CsrTemplate struct {
