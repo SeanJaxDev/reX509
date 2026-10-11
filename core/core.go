@@ -48,6 +48,16 @@ var LegacySignatureAlgorithms = map[SignatureAlgorithm]bool{
 	SHA512WithRSA: true,
 }
 
+// UnsupportedSignatureAlgorithms is a map of signature algorithms that are considered unsupported
+// and should not be used.
+var UnsupportedSignatureAlgorithms = map[SignatureAlgorithm]bool{
+	SignatureAlgorithm(x509.MD2WithRSA):    true,
+	SignatureAlgorithm(x509.MD5WithRSA):    true,
+	SignatureAlgorithm(x509.SHA1WithRSA):   true,
+	SignatureAlgorithm(x509.DSAWithSHA1):   true,
+	SignatureAlgorithm(x509.ECDSAWithSHA1): true,
+}
+
 // SignatureAlgorithm is a wrapper around x509.SignatureAlgorithm to allow for custom methods.
 type SignatureAlgorithm x509.SignatureAlgorithm
 
