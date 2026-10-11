@@ -2,7 +2,6 @@ package core
 
 import (
 	"crypto/x509"
-	"crypto/x509/pkix"
 )
 
 // SignatureAlgorithm is a wrapper around x509.SignatureAlgorithm to allow for custom methods.
@@ -60,14 +59,3 @@ var UnsupportedSignatureAlgorithms = map[SignatureAlgorithm]bool{
 
 // SignatureAlgorithm is a wrapper around x509.SignatureAlgorithm to allow for custom methods.
 type SignatureAlgorithm x509.SignatureAlgorithm
-
-// CsrTemplate represents a template for creating a Certificate Signing Request (CSR).
-type CsrTemplate struct {
-	SignatureAlgorithm SignatureAlgorithm
-	Subject            pkix.Name
-	DNSNames           []string
-	EmailAddresses     []string
-	IPAddresses        []string
-	URIs               []string
-	ExtraExtensions    []pkix.Extension
-}
